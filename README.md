@@ -15,7 +15,9 @@ const instructor = {
 * Asynchronous, Event Loop
 * Process, Http, Files
 * node-fetch
+
 <br/>
+
 * ExpressJS
 * Routing
 * static files
@@ -24,12 +26,16 @@ const instructor = {
 * jwt
 * CORS
 * RESTful API
+
 <br/>
+
 * Socket.io
 * Web sockets
 * Setting up Socket.io
 * Subscribing
+
 <br/>
+
 * npm
 * npmjs
 * semver 

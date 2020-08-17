@@ -16,32 +16,37 @@ let print = function(num){
 numbers.forEach(print);
 
 console.log();
-const sum = numbers.reduce(function(currentValue, nextValue) { 
-    return currentValue + nextValue ;
-});
+// const sum = numbers.reduce(function(currentValue, nextValue) { 
+//     return currentValue + nextValue ;
+// });
+const sum = numbers.reduce((currentValue, nextValue) => currentValue + nextValue);
 console.log(sum);
 
 console.log();
-const firstOdd = numbers.find(function(num) {
-    return num %2 != 0;
-});
+const firstOdd = numbers.find(num => num %2 != 0);
 console.log(firstOdd);
 
 console.log();
-const squares = numbers.map(function(num){
-    return num * num;
-});
+// const squares = numbers.map(function(num){
+//     return num * num;
+// });
+const squares = numbers.map(num => num * num);
 console.log(squares);
 
 console.log();
-const divBy5 = numbers.filter(function(num) {
-    return num % 5 == 0;
-});
+// const divBy5 = numbers.filter(function(num) {
+//     return num % 5 == 0;
+// });
+const divBy5 = numbers.filter(num => num % 5 == 0 );
 console.log(divBy5);
 
 console.log();
-numbers.filter(function(num) {
-    return num % 2 == 0;
-}).forEach(function(num) {
-    console.log(num);
-});
+// numbers.filter(function(num) {
+//     return num % 2 == 0;
+// }).forEach(function(num) {
+//     console.log(num);
+// });
+
+numbers
+    .filter(num => num % 2 == 0)
+    .forEach(num => console.log(num));

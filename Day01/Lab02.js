@@ -38,3 +38,10 @@ const divBy5 = numbers.filter(function(num) {
     return num % 5 == 0;
 });
 console.log(divBy5);
+
+console.log();
+numbers.filter(function(num) {
+    return num % 2 == 0;
+}).forEach(function(num) {
+    console.log(num);
+});

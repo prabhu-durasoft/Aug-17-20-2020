@@ -12,6 +12,9 @@ class Car {
     static getCount() {
         return Car.count;
     }
+
+    //drive(miles) => {}
+    
     drive(miles) {
         console.log("Driving " + this.model + " at " + miles + " mph");
     }

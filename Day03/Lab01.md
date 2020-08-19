@@ -25,10 +25,10 @@
 
 * Build the following API to perform CRUD operations on the movies collection
 
-*  __POST /api/movies/:name/:year__  to add movie
+*  __POST /api/movies/name/:name/year/:year__  to add movie
 * __GET /api/movie__ to list all the movies
 * __DELETE /api/movie/:id__ to delete the movie
-* __PATCH api/movie/:id/:year__ to modify the movie's year of release 
+* __PATCH api/movie/id/:id/year/:year__ to modify the movie's year of release 
 
 
 * Duplication of movies are not allowed

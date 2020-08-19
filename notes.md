@@ -33,3 +33,26 @@
 * libuv library executes the callback functions one-after the other from the queue
 * DO NOT WRITE LONG RUNNING OPERATION IN JS
 * All the APIs that you use involve callbacks, which are executed asynchronously, without blocking main thread
+
+### Express JS
+* http://expressjs.com/ 
+* Spring MVC or struts
+* Lightweight API for building web applications
+* RESTful services in Node
+* minimalist framework
+* abstraction of http and fs modules
+* __sudo npm init__
+* https://npmjs.com
+* __sudo npm i --save express__
+* i stands for install
+* --save adds an entry into package.json in the dependencies section
+
+* __sudo npm i --save-dev nodemon__
+* MEAN or MERN stack
+* __sudo npm run [script name]__
+
+* __sudo npm uninstall --save-dev nodemon__
+
+* Express JS is extensible through the concept of middleware
+* A middleware in Express is a simple function that takes 3 arguments
+* request, response, and next(handle to the next item in the list, which can be another middleware function or the actual callback itself)

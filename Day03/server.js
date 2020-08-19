@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 
-
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
 //middleware
 const authorization = (req, res, next) => {
@@ -42,9 +44,7 @@ app.post('/greet', logging,  (req, res) => {
     res.end("Hello there");
 });
 
-app.get('/', (req, res) => {
-    res.end('Hello Express JS');
-});
+
 
 app.listen(3000, () => {
     console.log("Server started in 3000");

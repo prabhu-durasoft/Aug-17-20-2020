@@ -3,6 +3,17 @@ const moviesController = require("./app/movies_controller.js");
 const process = require("process");
 const port = process.env["PORT"] || 3000;
 
+app.post("/api/movies/export/:file", (req, res) => {
+    //save the movies collection to a file
+    moviesController.saveMoviesInFile(req.params.file, (err) => {
+        if (!err) {
+            res.sendStatus(200);
+        } else {
+            res.status(500).send(err.message);
+        }
+    });
+});
+
 app.get("/api/movies", (req, res) => {
     const movies = moviesController.getAllMovies();
     res.json(movies);

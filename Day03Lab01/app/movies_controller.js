@@ -1,9 +1,17 @@
 let movies = require('./movies_db.js');
-
+let fs = require("fs");
 class MoviesController {
     constructor(theMovies) {    
         this.movies = theMovies;
     }
+
+
+    saveMoviesInFile(fileName, callback) {
+        fs.writeFile(__dirname + "/" + fileName, JSON.stringify(this.movies), (err) => {
+            callback(err);
+        });
+    }
+
     createMovie(name, year) {
         if(this.movies.find(it => it.name === name && it.year === year)) {
             throw new Error(`Movie ${name} released on ${year} already exists`);

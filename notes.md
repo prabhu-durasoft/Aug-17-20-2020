@@ -76,3 +76,13 @@
 
 * __sudo npm i --save passport passport-jwt passport-local__
 
+## websockets
+
+* ws://localhost
+* WS protocol 
+* Used to implement push model in web environment
+* React/Angular dev environment, Gaming, Chat, Social media based on Web sockets
+* GraphQL subscriptions use websockets
+* Most modern browsers support it
+* __sudo npm i --save ws__
+* ws-client.html, ws-server.js

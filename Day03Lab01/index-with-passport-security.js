@@ -4,6 +4,10 @@ const moviesController = require("./app/movies_controller.js");
 const process = require("process");
 const port = process.env["PORT"] || 3000;
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
+const localStrategy = require("passport-local").Strategy;
+app.use(passport.initialize());
+
 const secretKey = "beer in chennai";
 
 const authorize = (req, res, next) => {
@@ -26,21 +30,30 @@ const authorize = (req, res, next) => {
         res.sendStatus(401);
     }
 }
-app.use(/\/((?!login).)*/, authorize);
 
-app.post("/login", express.json(), (req, res) => {
-    //AUTHENTICATION LOGIC
-    const  {username, password} = req.body;
-    //USE DB or oauth, or any other service for validation
-    if (username === "admin" && password === "admin") {
-        const payload = { username };
-        const token = jwt.sign(payload, secretKey, { expiresIn: '2m'});
-        res.json({token});
+passport.use("locallogin", new localStrategy({
+    usernameField: "username",
+    passwordField: "password"
+}, (username, password, done) => {
+    if (username === 'admin' && password === 'admin') {
+        return done(null, {username}, {message: 'Logged in Successfully'});
     }
     else {
-        res.end("Invalid credentials");
+        return done(null, false, {message: 'Invalid credentials'});
     }
-    
+}));
+
+
+app.use(/\/((?!login).)*/, authorize);
+
+//express.urlencoded() this is used for form-url-encoded
+//express.json() this is used for json in request body
+
+app.post("/login", [express.json(), passport.authenticate('locallogin', {session: false})], (req, res) => {
+    const  {username} = req.body;
+    const payload = { username };
+    const token = jwt.sign(payload, secretKey, { expiresIn: '2m'});
+    res.json({token});
 });
 
 app.post("/api/movies/export/:file", (req, res) => {

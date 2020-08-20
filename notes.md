@@ -56,3 +56,23 @@
 * Express JS is extensible through the concept of middleware
 * A middleware in Express is a simple function that takes 3 arguments
 * request, response, and next(handle to the next item in the list, which can be another middleware function or the actual callback itself)
+
+## Security
+
+* Build an authorization middleware
+* __app.use(authorizationMiddleware)__
+
+
+
+* Build the authentication logic in __/login__
+
+* JWT (Json Web Tokens) uses HTTP Headers
+* Session uses cookies (session_id) for tracking the client
+* __sudo npm i --save jsonwebtoken__
+* __express.json__ is a built-in middleware for accepting JSON data in request body
+* Equivalent of __@RequestBody__ in Spring Boot
+
+### passport
+
+* __sudo npm i --save passport passport-jwt passport-local__
+

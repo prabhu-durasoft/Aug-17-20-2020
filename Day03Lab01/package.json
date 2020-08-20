@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ws-server.js",
+    "dev": "nodemon ws-express-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.1",
